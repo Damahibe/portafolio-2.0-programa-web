@@ -1,738 +1,133 @@
 /* ==========================================================================
-   PORTAFOLIO PROFESIONAL - DANIEL HINCAPIE
-   Modernización con Bulma CSS v1.0.2 + Estilos Personalizados
+   PORTAFOLIO - DANIEL HINCAPIE
+   Estilos personalizados complementarios sobre Bulma CSS
    Tercer Corte Evaluativo - Desarrollo Web
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. VARIABLES DE TEMA Y PERSONALIZACIÓN DE BULMA
-   -------------------------------------------------------------------------- */
+/* 1. Variables de color y tipografía del portafolio original */
 :root {
-  /* Paleta de colores de autor */
-  --bg-deep: #090d14;
-  --bg-surface: #101622;
-  --bg-card: rgba(16, 22, 34, 0.78);
-  --bg-card-hover: rgba(23, 31, 48, 0.92);
-
-  --accent-cyan: #2dd4bf;
-  --accent-cyan-rgb: 45, 212, 191;
-  --accent-indigo: #6366f1;
-  --accent-orange: #f97316;
-  --accent-yellow: #f59e0b;
-
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(45, 212, 191, 0.35);
-
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(45, 212, 191, 0.2);
-
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  /* Sobrescritura de tokens de Bulma */
-  --bulma-primary: var(--accent-cyan);
-  --bulma-primary-h: 172deg;
-  --bulma-primary-s: 66%;
-  --bulma-primary-l: 50%;
-  --bulma-primary-invert: #090d14;
-
-  --bulma-scheme-main: var(--bg-deep);
-  --bulma-scheme-main-bis: var(--bg-surface);
-  --bulma-body-background-color: var(--bg-deep);
-  --bulma-body-color: var(--text-primary);
-  --bulma-family-primary: var(--font-sans);
-  --bulma-family-code: var(--font-mono);
-
-  --bulma-title-color: var(--text-primary);
-  --bulma-subtitle-color: var(--text-secondary);
-  --bulma-card-background-color: var(--bg-card);
-  --bulma-card-color: var(--text-primary);
-  --bulma-box-background-color: var(--bg-card);
-  --bulma-box-color: var(--text-primary);
-  --bulma-border: var(--border-subtle);
-  --bulma-radius: 12px;
-  --bulma-radius-large: 16px;
+  --teal: #2dd4bf;
+  --orange: #f97316;
+  --bg-dark: #12161c;
+  --card-bg: #1a202c;
+  --text-main: #f7f4ec;
+  --text-muted: #a0aec0;
 }
 
-/* --------------------------------------------------------------------------
-   2. REGLAS BASE Y RESET
-   -------------------------------------------------------------------------- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
+/* 2. Reglas generales */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-  background-color: var(--bg-deep);
+  scroll-padding-top: 65px;
+  background-color: var(--bg-dark);
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-sans);
-  background-color: var(--bg-deep);
-  color: var(--text-primary);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-/* Enlace de accesibilidad para lectores de pantalla */
+/* Accesibilidad */
 .skip-link {
   position: absolute;
-  top: -50px;
-  left: 16px;
-  background: var(--accent-cyan);
-  color: #090d14;
-  padding: 8px 16px;
-  font-weight: 700;
-  border-radius: 8px;
-  z-index: 1000;
-  transition: top 0.2s ease;
+  top: -40px;
+  left: 10px;
+  background: var(--teal);
+  color: #12161c;
+  padding: 6px 12px;
+  font-weight: bold;
+  z-index: 100;
+  transition: top 0.2s;
 }
-
 .skip-link:focus {
-  top: 16px;
+  top: 10px;
 }
 
-/* --------------------------------------------------------------------------
-   3. ENCABEZADO Y NAVBAR (BULMA MODERNA CON BLUR GLASS)
-   -------------------------------------------------------------------------- */
-.header-wrapper {
-  position: relative;
-  z-index: 99;
-}
-
-#main-navbar {
-  background: rgba(9, 13, 20, 0.82) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-subtle);
-  transition: all 0.3s ease;
-  min-height: 4.25rem;
-}
-
-#main-navbar.is-scrolled {
-  background: rgba(9, 13, 20, 0.95) !important;
-  border-bottom-color: rgba(45, 212, 191, 0.25);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.navbar-brand .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--text-primary) !important;
-  padding-left: 0.75rem;
+/* 3. Barra de navegación */
+.site-header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .brand-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
-  color: #090d14;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--teal), var(--orange));
+  color: #12161c;
   font-weight: 900;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 14px rgba(45, 212, 191, 0.4);
+  border-radius: 6px;
+  margin-right: 8px;
 }
 
-.brand-dot {
-  color: var(--accent-cyan);
-}
-
-.navbar-start {
-  margin: 0 auto;
-}
-
-.nav-link {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-secondary) !important;
-  transition: color 0.2s ease, background 0.2s ease;
-  padding: 0.6rem 1.1rem;
-  border-radius: 8px;
-  margin: 0 2px;
-}
-
-.nav-link:hover,
-.nav-link.is-active {
-  color: var(--accent-cyan) !important;
-  background-color: rgba(45, 212, 191, 0.08) !important;
-}
-
-.cta-header-btn {
-  font-weight: 700;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  border-color: var(--accent-cyan) !important;
-  color: var(--accent-cyan) !important;
-  transition: all 0.25s ease;
-}
-
-.cta-header-btn:hover {
-  background-color: var(--accent-cyan) !important;
-  color: #090d14 !important;
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-/* Burger en móviles */
-.navbar-burger {
-  color: var(--text-primary) !important;
-  height: 4.25rem;
-}
-
-@media screen and (max-width: 1023px) {
-  .navbar-menu {
-    background-color: var(--bg-surface) !important;
-    border-bottom: 1px solid var(--border-subtle);
-    padding: 1.25rem 1rem;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. SECCIÓN HERO (PRESENTACIÓN PRINCIPAL)
-   -------------------------------------------------------------------------- */
+/* 4. Sección Hero */
 .hero-section {
-  position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3.5rem;
-  background: radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.08) 0%, transparent 40%),
-              radial-gradient(circle at 85% 60%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.hero-title {
-  color: var(--text-primary) !important;
-  font-size: clamp(2rem, 4.5vw, 3.4rem) !important;
-  font-weight: 800 !important;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+.hero-image {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-cyan) 0%, #38bdf8 50%, var(--accent-indigo) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.hero-copy {
-  color: var(--text-secondary) !important;
-  font-size: 1.125rem;
-  line-height: 1.7;
-}
-
-.badge-accent {
-  background-color: rgba(45, 212, 191, 0.14) !important;
-  color: var(--accent-cyan) !important;
-  font-weight: 700;
-  border: 1px solid rgba(45, 212, 191, 0.3);
-}
-
-.badge-status {
-  background-color: rgba(16, 22, 34, 0.9) !important;
-  color: var(--text-secondary) !important;
-  border: 1px solid var(--border-subtle);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #22c55e;
-  box-shadow: 0 0 10px #22c55e;
-  animation: pulse-dot 2s infinite ease-in-out;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-.btn-glow {
-  background: linear-gradient(135deg, var(--accent-cyan), #14b8a6) !important;
-  color: #090d14 !important;
-  font-weight: 700 !important;
-  border: none !important;
-  box-shadow: 0 4px 18px rgba(45, 212, 191, 0.35);
-  transition: all 0.25s ease;
-}
-
-.btn-glow:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(45, 212, 191, 0.55);
-}
-
-/* Panel de métricas con Bulma Box */
 .hero-panel {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 14px !important;
-  backdrop-filter: blur(12px);
-  padding: 1.25rem 1.5rem !important;
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.panel-stat {
-  display: flex;
-  flex-direction: column;
+/* 5. Tarjetas y cajas con sombras limpias */
+.card, .box {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-cyan);
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.stat-value {
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-/* Card del visual hero */
-.hero-visual-card {
-  position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.hero-visual-card:hover {
+.card:hover, .box:hover {
   transform: translateY(-4px);
-  border-color: var(--border-accent);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
 
-.hero-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
-/* --------------------------------------------------------------------------
-   5. SECCIÓN PROPUESTA DE VALOR ("Lo que aporto")
-   -------------------------------------------------------------------------- */
-.value-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.value-card {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 16px !important;
-  padding: 2rem !important;
-  height: 100%;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-}
-
-.value-card:hover {
-  background: var(--bg-card-hover) !important;
-  border-color: var(--border-accent) !important;
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card), var(--shadow-glow);
-}
-
-.value-icon-wrapper {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background: rgba(45, 212, 191, 0.12);
-  border: 1px solid rgba(45, 212, 191, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1.35rem;
-  color: var(--accent-cyan);
-  margin-bottom: 1.25rem;
-}
-
-.value-card h3 {
-  color: var(--text-primary) !important;
-  font-weight: 700 !important;
-}
-
-.value-card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-/* --------------------------------------------------------------------------
-   6. SECCIÓN PROYECTOS ("Trabajo reciente")
-   -------------------------------------------------------------------------- */
-.projects-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0d131e 100%);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.project-card {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 18px !important;
-  overflow: hidden;
+.h-100 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.project-card:hover {
-  border-color: var(--border-accent) !important;
-  transform: translateY(-8px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), var(--shadow-glow);
 }
 
 .project-card .card-content {
-  padding: 1.75rem !important;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.project-badge {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  color: var(--text-primary) !important;
-}
-
-.project-title {
-  color: var(--text-primary) !important;
-  font-weight: 700 !important;
-  line-height: 1.35;
-}
-
-.project-desc {
-  color: var(--text-secondary) !important;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
+.project-card .content {
   flex: 1;
 }
 
-.project-tags .tag {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: var(--accent-cyan) !important;
-  border: 1px solid rgba(45, 212, 191, 0.2);
+/* 6. Formulario de contacto */
+.contact-form .input,
+.contact-form .textarea {
+  background-color: #0f1318;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-.project-card .card-footer {
-  border-top: 1px solid var(--border-subtle) !important;
-  background: rgba(16, 22, 34, 0.4);
+.contact-form .input:focus,
+.contact-form .textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.25);
 }
 
-.project-card .card-footer-item {
-  color: var(--text-secondary) !important;
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.85rem 1rem;
-  transition: all 0.2s ease;
+.contact-form .label {
+  color: var(--text-main);
 }
 
-.project-card .card-footer-item:hover {
-  color: var(--accent-cyan) !important;
-  background-color: rgba(45, 212, 191, 0.08);
-}
-
-/* --------------------------------------------------------------------------
-   7. SECCIÓN STACK TECNOLÓGICO
-   -------------------------------------------------------------------------- */
-.stack-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.stack-box {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 18px !important;
-  padding: 2rem !important;
-}
-
-.text-cyan {
-  color: var(--accent-cyan) !important;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.tech-tag {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-subtle) !important;
-  font-family: var(--font-mono);
-  font-size: 0.88rem !important;
-  padding: 0.5rem 0.9rem !important;
-  transition: all 0.2s ease;
-}
-
-.tech-tag:hover {
-  background: rgba(45, 212, 191, 0.15) !important;
-  color: var(--accent-cyan) !important;
-  border-color: var(--accent-cyan) !important;
-  transform: translateY(-2px);
-}
-
-.stack-tip {
-  background: rgba(16, 22, 34, 0.8) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-left: 4px solid var(--accent-indigo) !important;
-  color: var(--text-secondary) !important;
-  border-radius: 10px;
-}
-
-/* --------------------------------------------------------------------------
-   8. SECCIÓN SERVICIOS / METODOLOGÍA
-   -------------------------------------------------------------------------- */
-.services-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0d121c 100%);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.service-card {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 16px !important;
-  padding: 1.75rem 2rem !important;
-  height: 100%;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  border-color: var(--border-accent) !important;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
-}
-
-.service-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.service-step {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(45, 212, 191, 0.2), rgba(99, 102, 241, 0.2));
-  border: 1px solid rgba(45, 212, 191, 0.4);
-  font-family: var(--font-mono);
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--accent-cyan);
-}
-
-.service-card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-/* --------------------------------------------------------------------------
-   9. SECCIÓN CONTACTO (FORMULARIO CON BULMA)
-   -------------------------------------------------------------------------- */
-.contact-section {
-  padding-top: 4.5rem;
-  padding-bottom: 5rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.contact-info-item {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 14px !important;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 1rem 1.25rem !important;
-  margin-bottom: 0.85rem !important;
-  transition: all 0.25s ease;
-}
-
-.contact-info-item:hover {
-  border-color: var(--border-accent) !important;
-  transform: translateX(4px);
-}
-
-.contact-icon {
-  font-size: 1.5rem;
-}
-
-.contact-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-}
-
-.contact-value {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.contact-value:hover {
-  color: var(--accent-cyan);
-}
-
-.form-box {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 18px !important;
-  padding: 2.25rem !important;
-  box-shadow: var(--shadow-card);
-}
-
-.form-box .label {
-  color: var(--text-secondary) !important;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.form-box .input,
-.form-box .textarea {
-  background: rgba(9, 13, 20, 0.75) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  color: var(--text-primary) !important;
-  border-radius: 10px !important;
-  transition: all 0.2s ease;
-}
-
-.form-box .input:focus,
-.form-box .textarea:focus {
-  border-color: var(--accent-cyan) !important;
-  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2) !important;
-}
-
-.form-box .input::placeholder,
-.form-box .textarea::placeholder {
-  color: #64748b !important;
-}
-
-.btn-submit {
-  background: linear-gradient(135deg, var(--accent-cyan), #0d9488) !important;
-  color: #090d14 !important;
-  font-weight: 700 !important;
-  border: none !important;
-  border-radius: 10px !important;
-  transition: all 0.25s ease;
-}
-
-.btn-submit:hover {
-  box-shadow: 0 6px 20px rgba(45, 212, 191, 0.45);
-  transform: translateY(-2px);
-}
-
-/* --------------------------------------------------------------------------
-   10. PIE DE PÁGINA (FOOTER)
-   -------------------------------------------------------------------------- */
-.site-footer {
-  background: #06090e !important;
-  border-top: 1px solid var(--border-subtle);
-  padding: 3.5rem 1.5rem 3rem !important;
-}
-
-.footer-brand-col .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.25rem;
-}
-
-.footer-tagline {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  max-width: 440px;
-}
-
-.footer-academic {
-  color: var(--accent-cyan);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.copyright {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
-/* --------------------------------------------------------------------------
-   11. UTILIDADES Y AJUSTES RESPONSIVOS
-   -------------------------------------------------------------------------- */
-.max-w-600 {
-  max-w: 600px;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-@media screen and (max-width: 768px) {
-  .hero-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .hero-title {
-    font-size: 2.1rem !important;
-  }
-
-  .hero-buttons .button {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .form-box {
-    padding: 1.5rem !important;
-  }
-
-  .footer-social-buttons {
-    justify-content: flex-start !important;
-  }
+/* 7. Pie de página */
+.footer {
+  background-color: #0c0f14;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }

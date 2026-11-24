@@ -1,219 +1,143 @@
 <!doctype html>
-<html lang="es" data-theme="dark">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daniel Hincapié | Portafolio - Web, Juegos y Cloud</title>
+    <title>Daniel | Web, juegos y cloud</title>
     <meta
       name="description"
-      content="Portafolio profesional de Daniel Hincapié: Desarrollo web full stack, juegos interactivos, contenedores Docker, arquitecturas cloud y DevOps."
-    />
-    <meta name="author" content="Daniel Hincapié" />
-
-    <!-- Open Graph / Redes Sociales -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Daniel Hincapié | Desarrollador Web, Juegos y Cloud" />
-    <meta
-      property="og:description"
-      content="Portafolio profesional con proyectos en React, TypeScript, Node.js, PostgreSQL y DevOps."
-    />
-    <meta property="og:image" content="./assets/hero-visual.svg.png" />
-
-    <!-- Tipografías de Google Fonts: Plus Jakarta Sans & Fira Code -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      content="Portafolio Daniel Hincapie, desarrollador enfocado en web, juegos, cloud, bases de datos, Docker y DevOps."
     />
 
-    <!-- Framework de Estilos: Bulma CSS v1.0.2 (Local con fallback a CDN) -->
+    <!-- Framework de Estilos: Bulma CSS (Recomendado en clase) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" href="./css/bulma.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
 
-    <!-- Estilos personalizados que extienden y modernizan Bulma -->
+    <!-- Estilos personalizados complementarios -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- Enlace de accesibilidad para saltar directo al contenido -->
-    <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
+    <!-- Enlace de accesibilidad -->
+    <a class="skip-link" href="#inicio">Saltar al contenido</a>
 
-    <!-- Encabezado / Navbar Fija de Bulma con efecto Glassmorphism -->
-    <header class="header-wrapper">
-      <nav class="navbar is-fixed-top" id="main-navbar" role="navigation" aria-label="navegación principal">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item brand" href="#inicio" aria-label="Ir al inicio del portafolio">
-              <span class="brand-mark">D</span>
-              <span class="brand-text">Daniel<span class="brand-dot">.dev</span></span>
-            </a>
+    <!-- Barra de Navegación con Bulma Navbar -->
+    <header class="site-header navbar is-dark is-fixed-top" role="navigation" aria-label="Navegación principal">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="brand navbar-item" href="#inicio" aria-label="Ir al inicio">
+            <span class="brand-mark">D</span>
+            <strong>Daniel.dev</strong>
+          </a>
 
-            <!-- Botón Hamburguesa de Bulma para dispositivos móviles -->
-            <button
-              class="navbar-burger"
-              id="navbarBurger"
-              aria-label="Abrir menú de navegación"
-              aria-expanded="false"
-              data-target="navbarMenu"
-              type="button"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </button>
-          </div>
+          <!-- Botón hamburguesa oficial de Bulma para móviles -->
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-          <!-- Menú de navegación -->
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item nav-link" href="#inicio">Inicio</a>
-              <a class="navbar-item nav-link" href="#proyectos">Proyectos</a>
-              <a class="navbar-item nav-link" href="#stack">Stack</a>
-              <a class="navbar-item nav-link" href="#servicios">Servicios</a>
-              <a class="navbar-item nav-link" href="#contacto">Contacto</a>
-            </div>
-
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <a class="button is-primary is-outlined is-rounded cta-header-btn" href="mailto:d.hincapie@utp.edu.co">
-                  <span class="icon">💬</span>
-                  <span>Hablemos</span>
-                </a>
-              </div>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="#proyectos">Proyectos</a>
+            <a class="navbar-item" href="#stack">Stack</a>
+            <a class="navbar-item" href="#servicios">Servicios</a>
+            <a class="navbar-item" href="#contacto">Contacto</a>
+            <div class="navbar-item">
+              <a class="button is-primary is-small is-rounded" href="mailto:d.hincapie@utp.edu.co">Hablemos</a>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main id="inicio">
-      <!-- ========================================================
-           SECCIÓN HERO (Presentación Principal con Componentes Bulma)
-           ======================================================== -->
+      <!-- Sección Principal (Hero con Bulma) -->
       <section class="hero is-medium hero-section">
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
-              <!-- Columna izquierda: Información y presentación -->
-              <div class="column is-7 hero-intro">
-                <div class="tags mb-3">
-                  <span class="tag is-primary is-light is-medium is-rounded badge-accent">
-                    🚀 Web · Juegos · Cloud
-                  </span>
-                  <span class="tag is-dark is-medium is-rounded badge-status">
-                    <span class="status-indicator"></span> Disponible para proyectos
-                  </span>
-                </div>
-
-                <h1 class="title is-1 hero-title">
-                  Construyo experiencias digitales completas,
-                  <span class="gradient-text">desde la interfaz hasta la nube</span>.
-                </h1>
-
-                <p class="subtitle is-5 hero-copy mt-4">
-                  Hola, soy <strong>Daniel Hincapié</strong>. Desarrollador web, de videojuegos y soluciones cloud con
-                  bases de ingeniería sólidas: APIs REST escalables, contenedores Docker, bases de datos relacionales y
-                  automatización para que las ideas no se queden solo en una pantalla bonita.
+              <div class="column is-7 hero-content">
+                <span class="tag is-primary is-light mb-3">Web · Juegos · Cloud</span>
+                <h1 class="title is-1">Hola, soy Daniel Hincapie.</h1>
+                <p class="subtitle is-5 hero-copy">
+                  Desarrollo web, juegos y soluciones cloud. Me gusta crear productos web, experiencias interactivas y
+                  soluciones cloud con bases sólidas: datos, contenedores, APIs, despliegues y automatización para que
+                  las ideas no se queden solo en una pantalla bonita.
                 </p>
 
-                <!-- Acciones principales -->
-                <div class="buttons mt-5 hero-buttons">
-                  <a class="button is-primary is-medium is-rounded btn-glow" href="#proyectos">
-                    <span>Ver proyectos</span>
-                    <span class="icon ml-1" aria-hidden="true">↗</span>
+                <!-- Botones estilizados con clases Bulma -->
+                <div class="buttons hero-actions mt-4">
+                  <a class="button is-primary" href="#proyectos">
+                    <span class="icon mr-1">↗</span>
+                    Ver proyectos
                   </a>
-                  <a class="button is-dark is-outlined is-medium is-rounded" href="#contacto">
-                    <span>Contactar</span>
-                    <span class="icon ml-1" aria-hidden="true">✉</span>
+                  <a class="button is-light" href="#contacto">
+                    <span class="icon mr-1">@</span>
+                    Contactar
                   </a>
                 </div>
 
                 <!-- Panel de resumen profesional con Box y Columnas de Bulma -->
-                <div class="box hero-panel mt-5">
-                  <div class="columns is-mobile is-multiline">
-                    <div class="column is-4-tablet is-12-mobile panel-stat">
-                      <span class="stat-label">Especialidad</span>
-                      <strong class="stat-value">Web + Juegos</strong>
+                <div class="box hero-panel mt-5" aria-label="Resumen profesional">
+                  <div class="columns is-mobile has-text-centered">
+                    <div class="column">
+                      <p class="heading">Especialidad</p>
+                      <p class="title is-6">Web + juegos</p>
                     </div>
-                    <div class="column is-4-tablet is-12-mobile panel-stat">
-                      <span class="stat-label">Infraestructura</span>
-                      <strong class="stat-value">Cloud + Docker</strong>
+                    <div class="column">
+                      <p class="heading">Infraestructura</p>
+                      <p class="title is-6">Cloud + Docker</p>
                     </div>
-                    <div class="column is-4-tablet is-12-mobile panel-stat">
-                      <span class="stat-label">Base Técnica</span>
-                      <strong class="stat-value">Datos + DevOps</strong>
+                    <div class="column">
+                      <p class="heading">Base técnica</p>
+                      <p class="title is-6">Datos + DevOps</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Columna derecha: Recurso visual gráfico -->
-              <div class="column is-5 hero-visual-col">
-                <div class="hero-visual-card">
-                  <figure class="image">
-                    <img
-                      src="./assets/hero-visual.svg"
-                      alt="Ilustración técnica de entorno de desarrollo y nube"
-                      class="hero-img"
-                    />
-                  </figure>
-                </div>
+              <!-- Imagen con Bulma Image -->
+              <div class="column is-5 hero-media">
+                <figure class="image">
+                  <img src="./assets/hero-visual.svg.png" alt="Ilustración desarrollo web y cloud" class="hero-image" />
+                </figure>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================================================
-           SECCIÓN PROPUESTA DE VALOR ("Lo que aporto")
-           ======================================================== -->
-      <section class="section value-section" aria-label="Propuesta de valor">
+      <!-- Propuesta de Valor ("Lo que aporto") -->
+      <section class="section intro-band" aria-label="Propuesta de valor">
         <div class="container">
-          <div class="section-heading has-text-centered mb-6">
-            <span class="tag is-info is-light is-rounded mb-2 text-uppercase">Lo que aporto</span>
+          <div class="section-heading has-text-centered mb-5">
+            <span class="tag is-info is-light mb-2">Lo que aporto</span>
             <h2 class="title is-2">Desarrollo con mirada de producto y base de ingeniería.</h2>
-            <p class="subtitle is-6 max-w-600 mx-auto">
-              Cada proyecto combina diseño centrado en el usuario con una arquitectura técnica escalable y mantenible.
-            </p>
           </div>
-
-          <div class="columns is-multiline">
+          <div class="columns value-grid">
             <div class="column is-4">
-              <div class="box value-card">
-                <div class="value-icon-wrapper">
-                  <span class="value-icon">{ }</span>
-                </div>
-                <h3 class="title is-4 mt-3">Web usable y bien pensada</h3>
-                <p class="content">
-                  Interfaces responsive, componentes limpios, maquetación moderna y flujos de interacción claros y
-                  accesibles para usuarios reales.
+              <div class="box has-text-centered h-100">
+                <span class="value-icon tag is-medium is-primary is-light mb-3">{ }</span>
+                <h3 class="title is-4">Web usable y bien pensada</h3>
+                <p>Interfaces responsive, componentes ordenados y flujos que se sienten claros para usuarios reales.</p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box has-text-centered h-100">
+                <span class="value-icon tag is-medium is-warning is-light mb-3">⚡</span>
+                <h3 class="title is-4">Interactividad con intención</h3>
+                <p>
+                  Experiencias tipo juego, prototipos dinámicos y mecánicas que hacen que el producto se sienta vivo.
                 </p>
               </div>
             </div>
-
             <div class="column is-4">
-              <div class="box value-card">
-                <div class="value-icon-wrapper">
-                  <span class="value-icon">⚡</span>
-                </div>
-                <h3 class="title is-4 mt-3">Interactividad con intención</h3>
-                <p class="content">
-                  Experiencias tipo juego en navegador, prototipos dinámicos, gestión de estados y mecánicas visuales
-                  que hacen que el producto se sienta vivo.
-                </p>
-              </div>
-            </div>
-
-            <div class="column is-4">
-              <div class="box value-card">
-                <div class="value-icon-wrapper">
-                  <span class="value-icon">☁️</span>
-                </div>
-                <h3 class="title is-4 mt-3">Infraestructura para crecer</h3>
-                <p class="content">
-                  Servicios backend en Express/Node, bases de datos PostgreSQL, contenedores Docker y despliegues listos
-                  para operar con confianza.
+              <div class="box has-text-centered h-100">
+                <span class="value-icon tag is-medium is-success is-light mb-3">✓</span>
+                <h3 class="title is-4">Infraestructura para crecer</h3>
+                <p>
+                  APIs, bases de datos, Docker, cloud y pipelines para que el proyecto pueda desplegarse y mantenerse.
                 </p>
               </div>
             </div>
@@ -221,389 +145,218 @@
         </div>
       </section>
 
-      <!-- ========================================================
-           SECCIÓN PROYECTOS ("Trabajo reciente" con Cards de Bulma)
-           ======================================================== -->
-      <section class="section projects-section" id="proyectos">
+      <!-- Proyectos ("Trabajo reciente" en Cards de Bulma) -->
+      <section class="section" id="proyectos">
         <div class="container">
-          <div class="section-heading has-text-centered mb-6">
-            <span class="tag is-primary is-light is-rounded mb-2 text-uppercase">Trabajo reciente</span>
+          <div class="section-heading has-text-centered mb-5">
+            <span class="tag is-primary is-light mb-2">Trabajo reciente</span>
             <h2 class="title is-2">Proyectos que muestran cómo pienso y construyo.</h2>
-            <p class="subtitle is-6 max-w-600 mx-auto">
-              Soluciones diseñadas con enfoque full-stack: desde la experiencia de usuario hasta la infraestructura.
-            </p>
           </div>
-
-          <div class="columns is-multiline">
-            <!-- Proyecto 1: Dashboard de datos -->
+          <div class="columns is-multiline projects">
+            <!-- Proyecto 1 -->
             <div class="column is-4">
-              <div class="card project-card">
+              <div class="card project-card h-100">
                 <div class="card-content">
-                  <div class="level is-mobile mb-3">
+                  <div class="level is-mobile mb-2">
                     <div class="level-left">
-                      <span class="tag is-dark is-rounded project-badge">01</span>
+                      <span class="tag is-dark">01</span>
                     </div>
                     <div class="level-right">
-                      <span class="tag is-primary is-light">Producto Web</span>
+                      <span class="tag is-info is-light">Producto web</span>
                     </div>
                   </div>
-
-                  <h3 class="title is-4 project-title">Dashboard conectado a datos reales</h3>
-                  <p class="content project-desc">
-                    Panel responsive con métricas en tiempo real, filtros avanzados, tablas de datos, API propia y
-                    consultas SQL optimizadas para operación diaria.
+                  <h3 class="title is-4">Dashboard conectado a datos reales</h3>
+                  <p class="content">
+                    Panel responsive con KPIs, filtros, tablas, API propia y consultas optimizadas para operación diaria.
                   </p>
-
-                  <div class="tags project-tags">
-                    <span class="tag is-link is-light">React</span>
-                    <span class="tag is-info is-light">TypeScript</span>
-                    <span class="tag is-success is-light">PostgreSQL</span>
-                    <span class="tag is-primary is-light">API REST</span>
+                  <div class="tags">
+                    <span class="tag is-primary is-light">React</span>
+                    <span class="tag is-link is-light">TypeScript</span>
+                    <span class="tag is-info is-light">PostgreSQL</span>
+                    <span class="tag is-success is-light">API REST</span>
                   </div>
                 </div>
-
-                <footer class="card-footer">
-                  <a
-                    href="https://github.com/Damahibe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="card-footer-item"
-                  >
-                    <span class="icon mr-1">📂</span> Ver Código
-                  </a>
-                  <a href="#contacto" class="card-footer-item">
-                    <span class="icon mr-1">🔍</span> Consultar
-                  </a>
-                </footer>
               </div>
             </div>
 
-            <!-- Proyecto 2: Juego web interactivo -->
+            <!-- Proyecto 2 -->
             <div class="column is-4">
-              <div class="card project-card">
+              <div class="card project-card h-100">
                 <div class="card-content">
-                  <div class="level is-mobile mb-3">
+                  <div class="level is-mobile mb-2">
                     <div class="level-left">
-                      <span class="tag is-dark is-rounded project-badge">02</span>
+                      <span class="tag is-dark">02</span>
                     </div>
                     <div class="level-right">
-                      <span class="tag is-warning is-light">Juego Web</span>
+                      <span class="tag is-warning is-light">Juego web</span>
                     </div>
                   </div>
-
-                  <h3 class="title is-4 project-title">Experiencia interactiva en navegador</h3>
-                  <p class="content project-desc">
-                    Prototipo jugable con motor gráfico en Canvas 2D, máquinas de estados, UI de progreso y algoritmos
-                    optimizados para correr con fluidez a 60 FPS.
+                  <h3 class="title is-4">Experiencia interactiva en navegador</h3>
+                  <p class="content">
+                    Prototipo jugable con escenas, estados, UI de progreso y lógica pensada para correr fluido en web.
                   </p>
-
-                  <div class="tags project-tags">
+                  <div class="tags">
                     <span class="tag is-warning is-light">JavaScript</span>
-                    <span class="tag is-danger is-light">HTML5 Canvas</span>
+                    <span class="tag is-danger is-light">Canvas</span>
                     <span class="tag is-info is-light">Game UI</span>
                     <span class="tag is-success is-light">Performance</span>
                   </div>
                 </div>
-
-                <footer class="card-footer">
-                  <a
-                    href="https://github.com/Damahibe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="card-footer-item"
-                  >
-                    <span class="icon mr-1">📂</span> Ver Código
-                  </a>
-                  <a href="#contacto" class="card-footer-item">
-                    <span class="icon mr-1">🔍</span> Consultar
-                  </a>
-                </footer>
               </div>
             </div>
 
-            <!-- Proyecto 3: Backend & DevOps -->
+            <!-- Proyecto 3 -->
             <div class="column is-4">
-              <div class="card project-card">
+              <div class="card project-card h-100">
                 <div class="card-content">
-                  <div class="level is-mobile mb-3">
+                  <div class="level is-mobile mb-2">
                     <div class="level-left">
-                      <span class="tag is-dark is-rounded project-badge">03</span>
+                      <span class="tag is-dark">03</span>
                     </div>
                     <div class="level-right">
-                      <span class="tag is-info is-light">Cloud & DevOps</span>
+                      <span class="tag is-success is-light">Cloud & DevOps</span>
                     </div>
                   </div>
-
-                  <h3 class="title is-4 project-title">Backend desplegable con contenedores</h3>
-                  <p class="content project-desc">
-                    Servicio con base de datos PostgreSQL, dockerización multinivel, control de variables de entorno,
-                    seguridad JWT, automatización CI/CD y monitoreo.
+                  <h3 class="title is-4">Backend desplegable con contenedores</h3>
+                  <p class="content">
+                    Servicio con base de datos, Docker, variables de entorno, automatización de despliegue y monitoreo
+                    inicial.
                   </p>
-
-                  <div class="tags project-tags">
-                    <span class="tag is-success is-light">Node.js</span>
+                  <div class="tags">
+                    <span class="tag is-success is-light">Node</span>
                     <span class="tag is-info is-light">Docker</span>
-                    <span class="tag is-link is-light">Cloud Deploy</span>
+                    <span class="tag is-link is-light">Cloud</span>
                     <span class="tag is-primary is-light">CI/CD</span>
                   </div>
                 </div>
-
-                <footer class="card-footer">
-                  <a
-                    href="https://github.com/Damahibe/mi-proyecto-backend"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="card-footer-item"
-                  >
-                    <span class="icon mr-1">📂</span> Ver Repositorio
-                  </a>
-                  <a href="#contacto" class="card-footer-item">
-                    <span class="icon mr-1">🔍</span> Consultar
-                  </a>
-                </footer>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================================================
-           SECCIÓN STACK TECNOLÓGICO (Con Tags y Categorías de Bulma)
-           ======================================================== -->
-      <section class="section stack-section" id="stack">
+      <!-- Stack Tecnológico (con Tags y Badges de Bulma) -->
+      <section class="section split-section" id="stack">
         <div class="container">
-          <div class="columns is-vcentered">
-            <!-- Columna izquierda: Descripción -->
-            <div class="column is-5">
-              <span class="tag is-link is-light is-rounded mb-2 text-uppercase">Stack Tecnológico</span>
-              <h2 class="title is-2">Herramientas para construir, desplegar y mantener productos sólidos.</h2>
-              <p class="subtitle is-6 mt-3">
-                Selección de tecnologías modernas que domino para construir aplicaciones escalables, desde el frontend
-                reactivo hasta la infraestructura cloud.
-              </p>
-              <div class="notification is-dark is-light mt-4 stack-tip">
-                <span class="icon mr-2">💡</span>
-                <strong>Filosofía de desarrollo:</strong> Escribir código tipado, modular y desacoplado, aplicando
-                buenas prácticas (principios SOLID) tanto en el cliente como en el servidor.
-              </div>
-            </div>
-
-            <!-- Columna derecha: Tags categorizadas -->
-            <div class="column is-7">
-              <div class="box stack-box">
-                <h3 class="title is-5 mb-3 text-cyan">Frontend & UI</h3>
-                <div class="tags are-medium mb-5">
-                  <span class="tag is-dark is-rounded tech-tag">HTML5</span>
-                  <span class="tag is-dark is-rounded tech-tag">CSS3 / Bulma</span>
-                  <span class="tag is-dark is-rounded tech-tag">JavaScript (ES6+)</span>
-                  <span class="tag is-dark is-rounded tech-tag">TypeScript</span>
-                  <span class="tag is-dark is-rounded tech-tag">React</span>
-                  <span class="tag is-dark is-rounded tech-tag">Next.js</span>
-                  <span class="tag is-dark is-rounded tech-tag">Canvas 2D</span>
-                </div>
-
-                <h3 class="title is-5 mb-3 text-cyan">Backend & Bases de Datos</h3>
-                <div class="tags are-medium mb-5">
-                  <span class="tag is-dark is-rounded tech-tag">Node.js</span>
-                  <span class="tag is-dark is-rounded tech-tag">Express</span>
-                  <span class="tag is-dark is-rounded tech-tag">Sequelize ORM</span>
-                  <span class="tag is-dark is-rounded tech-tag">PostgreSQL</span>
-                  <span class="tag is-dark is-rounded tech-tag">MongoDB</span>
-                  <span class="tag is-dark is-rounded tech-tag">RESTful APIs</span>
-                  <span class="tag is-dark is-rounded tech-tag">JWT Auth</span>
-                </div>
-
-                <h3 class="title is-5 mb-3 text-cyan">DevOps, Cloud & Herramientas</h3>
-                <div class="tags are-medium">
-                  <span class="tag is-dark is-rounded tech-tag">Docker</span>
-                  <span class="tag is-dark is-rounded tech-tag">Git & GitHub</span>
-                  <span class="tag is-dark is-rounded tech-tag">CI/CD Pipelines</span>
-                  <span class="tag is-dark is-rounded tech-tag">Linux</span>
-                  <span class="tag is-dark is-rounded tech-tag">Postman</span>
-                  <span class="tag is-dark is-rounded tech-tag">Cloud Hosting</span>
-                </div>
-              </div>
+          <div class="section-heading has-text-centered mb-5">
+            <span class="tag is-link is-light mb-2">Stack</span>
+            <h2 class="title is-2">Herramientas para construir, desplegar y mantener productos sólidos.</h2>
+          </div>
+          <div class="box has-text-centered">
+            <div class="tags are-medium is-centered" aria-label="Tecnologías">
+              <span class="tag is-info is-light">HTML</span>
+              <span class="tag is-info is-light">CSS</span>
+              <span class="tag is-warning is-light">JavaScript</span>
+              <span class="tag is-primary is-light">React</span>
+              <span class="tag is-link is-light">TypeScript</span>
+              <span class="tag is-dark is-light">Next.js</span>
+              <span class="tag is-success is-light">Node.js</span>
+              <span class="tag is-primary is-light">APIs</span>
+              <span class="tag is-danger is-light">Canvas</span>
+              <span class="tag is-warning is-light">Game Dev</span>
+              <span class="tag is-info is-light">Cloud</span>
+              <span class="tag is-link is-light">Docker</span>
+              <span class="tag is-dark is-light">DevOps</span>
+              <span class="tag is-primary is-light">CI/CD</span>
+              <span class="tag is-success is-light">SQL</span>
+              <span class="tag is-info is-light">PostgreSQL</span>
+              <span class="tag is-success is-light">MongoDB</span>
+              <span class="tag is-danger is-light">Git</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================================================
-           SECCIÓN SERVICIOS / METODOLOGÍA (Pasos Estilizados)
-           ======================================================== -->
-      <section class="section services-section" id="servicios">
+      <!-- Servicios (Proceso en Columnas y Boxes de Bulma) -->
+      <section class="section process" id="servicios">
         <div class="container">
-          <div class="section-heading has-text-centered mb-6">
-            <span class="tag is-warning is-light is-rounded mb-2 text-uppercase">Servicios & Especialidades</span>
+          <div class="section-heading has-text-centered mb-5">
+            <span class="tag is-warning is-light mb-2">Servicios</span>
             <h2 class="title is-2">De una idea a un producto que corre, escala y se puede mejorar.</h2>
-            <p class="subtitle is-6 max-w-600 mx-auto">
-              Acompañamiento integral en el ciclo de vida del software, garantizando calidad en cada etapa.
-            </p>
           </div>
-
-          <div class="columns is-multiline">
+          <div class="columns is-multiline timeline">
             <div class="column is-6">
-              <div class="box service-card">
-                <div class="service-header">
-                  <span class="service-step">01</span>
-                  <h3 class="title is-4 mb-1">Web y Producto Digital</h3>
-                </div>
-                <p class="content mt-3">
-                  Landing pages de alta conversión, dashboards analíticos, MVPs y aplicaciones web completas con
-                  interfaces limpias, arquitectura modular y diseño completamente adaptable.
+              <div class="box h-100">
+                <span class="tag is-primary is-rounded mb-2">1</span>
+                <h3 class="title is-4">Web y producto</h3>
+                <p>Landing pages, dashboards, MVPs y aplicaciones con UI clara, responsive y mantenible.</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="box h-100">
+                <span class="tag is-warning is-rounded mb-2">2</span>
+                <h3 class="title is-4">Juegos e interacción</h3>
+                <p>
+                  Prototipos jugables, interfaces dinámicas, lógica de estados y experiencias interactivas en navegador.
                 </p>
               </div>
             </div>
-
             <div class="column is-6">
-              <div class="box service-card">
-                <div class="service-header">
-                  <span class="service-step">02</span>
-                  <h3 class="title is-4 mb-1">Juegos e Interacción Digital</h3>
-                </div>
-                <p class="content mt-3">
-                  Prototipos jugables, micro-interacciones visuales, simuladores web interactivos y mecánicas dinámicas
-                  en Canvas que enriquecen el engagement del usuario.
-                </p>
+              <div class="box h-100">
+                <span class="tag is-info is-rounded mb-2">3</span>
+                <h3 class="title is-4">Backend y datos</h3>
+                <p>APIs, autenticación, modelos de datos, consultas SQL/NoSQL e integraciones entre servicios.</p>
               </div>
             </div>
-
             <div class="column is-6">
-              <div class="box service-card">
-                <div class="service-header">
-                  <span class="service-step">03</span>
-                  <h3 class="title is-4 mb-1">Backend, APIs y Persistencia</h3>
-                </div>
-                <p class="content mt-3">
-                  Diseño de arquitecturas por capas en Express y Sequelize, autenticación y autorización segura con JWT,
-                  modelado relacional en PostgreSQL y optimización de endpoints.
-                </p>
-              </div>
-            </div>
-
-            <div class="column is-6">
-              <div class="box service-card">
-                <div class="service-header">
-                  <span class="service-step">04</span>
-                  <h3 class="title is-4 mb-1">Cloud, Docker y DevOps</h3>
-                </div>
-                <p class="content mt-3">
-                  Contenedorización con Docker, configuración segura de entornos, integración y despliegue continuo
-                  (CI/CD) para que la puesta en producción sea rápida, predecible y sin sorpresas.
-                </p>
+              <div class="box h-100">
+                <span class="tag is-success is-rounded mb-2">4</span>
+                <h3 class="title is-4">Cloud y DevOps</h3>
+                <p>Docker, despliegues, variables de entorno, CI/CD y bases para operar el proyecto con confianza.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================================================
-           SECCIÓN CONTACTO (Formulario con Controles de Bulma)
-           ======================================================== -->
-      <section class="section contact-section" id="contacto">
+      <!-- Contacto (Formulario con Componentes de Bulma) -->
+      <section class="section contact" id="contacto">
         <div class="container">
           <div class="columns is-vcentered">
-            <!-- Columna izquierda: Información de contacto -->
             <div class="column is-5">
-              <span class="tag is-success is-light is-rounded mb-2 text-uppercase">Disponible para proyectos</span>
-              <h2 class="title is-2">¿Tienes una web, juego, backend o idea cloud para llevar a producción?</h2>
-              <p class="content mt-4">
-                Cuéntame qué quieres construir y te respondo con una ruta clara: alcance técnico, arquitectura recomendada,
-                prioridades y un primer entregable funcional que puedas probar.
+              <span class="tag is-success is-light mb-2">Disponible para proyectos</span>
+              <h2 class="title is-2">¿Tienes una web, juego, backend o idea cloud que quieres llevar a producción?</h2>
+              <p class="content">
+                Cuéntame qué quieres construir y te respondo con una ruta clara: alcance, arquitectura, prioridades y un
+                primer entregable que se pueda probar.
               </p>
-
-              <!-- Tarjetas informativas de contacto -->
-              <div class="contact-info-list mt-5">
-                <div class="box contact-info-item">
-                  <span class="contact-icon">📧</span>
-                  <div>
-                    <span class="contact-label">Correo institucional / directo</span>
-                    <a href="mailto:d.hincapie@utp.edu.co" class="contact-value">d.hincapie@utp.edu.co</a>
-                  </div>
-                </div>
-
-                <div class="box contact-info-item">
-                  <span class="contact-icon">🐙</span>
-                  <div>
-                    <span class="contact-label">Perfil de GitHub</span>
-                    <a href="https://github.com/Damahibe" target="_blank" rel="noopener noreferrer" class="contact-value">
-                      github.com/Damahibe
-                    </a>
-                  </div>
-                </div>
-
-                <div class="box contact-info-item">
-                  <span class="contact-icon">📍</span>
-                  <div>
-                    <span class="contact-label">Ubicación</span>
-                    <span class="contact-value">Pereira, Colombia (UTP)</span>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <!-- Columna derecha: Formulario con componentes oficiales Bulma -->
             <div class="column is-7">
-              <div class="box form-box">
-                <h3 class="title is-4 mb-4">Envíame un mensaje</h3>
-                <form action="mailto:d.hincapie@utp.edu.co" method="post" enctype="text/plain">
-                  <!-- Campo Nombre -->
+              <div class="box">
+                <form class="contact-form" action="mailto:d.hincapie@utp.edu.co" method="post" enctype="text/plain">
                   <div class="field">
-                    <label class="label" for="nombre">Nombre completo</label>
-                    <div class="control has-icons-left">
-                      <input
-                        class="input"
-                        id="nombre"
-                        type="text"
-                        name="nombre"
-                        placeholder="Ej. Carlos Mendoza"
-                        required
-                      />
-                      <span class="icon is-small is-left">👤</span>
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                      <input class="input" type="text" name="nombre" placeholder="Tu nombre" required />
                     </div>
                   </div>
-
-                  <!-- Campo Email -->
                   <div class="field">
-                    <label class="label" for="email">Correo electrónico</label>
-                    <div class="control has-icons-left">
-                      <input
-                        class="input"
-                        id="email"
-                        type="email"
-                        name="email"
-                        placeholder="tu@correo.com"
-                        required
-                      />
-                      <span class="icon is-small is-left">✉️</span>
+                    <label class="label">Email</label>
+                    <div class="control">
+                      <input class="input" type="email" name="email" placeholder="tu@email.com" required />
                     </div>
                   </div>
-
-                  <!-- Campo Mensaje/Proyecto -->
                   <div class="field">
-                    <label class="label" for="proyecto">Descripción del proyecto o consulta</label>
+                    <label class="label">Proyecto</label>
                     <div class="control">
                       <textarea
                         class="textarea"
-                        id="proyecto"
                         name="proyecto"
                         rows="4"
-                        placeholder="Cuéntame sobre tu idea: web, juego en Canvas, API REST, Docker, base de datos..."
+                        placeholder="Web, juego, API, base de datos, Docker, cloud..."
                         required
                       ></textarea>
                     </div>
                   </div>
-
-                  <!-- Botón Enviar con estilo Bulma -->
-                  <div class="field mt-5">
+                  <div class="field">
                     <div class="control">
-                      <button class="button is-primary is-medium is-fullwidth btn-submit" type="submit">
-                        <span class="icon mr-2">🚀</span>
+                      <button class="button is-primary is-fullwidth" type="submit">
+                        <span class="icon mr-1">→</span>
                         <span>Enviar mensaje</span>
                       </button>
                     </div>
-                    <p class="help has-text-centered mt-2">
-                      Este formulario iniciará tu cliente de correo con los datos diligenciados.
+                    <p class="help has-text-grey has-text-centered mt-2">
+                      Este formulario abre tu aplicación de correo para enviar el mensaje.
                     </p>
                   </div>
                 </form>
@@ -614,59 +367,32 @@
       </section>
     </main>
 
-    <!-- ========================================================
-         FOOTER (Pie de página con Bulma)
-         ======================================================== -->
-    <footer class="footer site-footer">
+    <!-- Footer con Bulma -->
+    <footer class="footer has-text-centered">
       <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-6 footer-brand-col">
-            <div class="brand">
-              <span class="brand-mark">D</span>
-              <strong class="brand-text">Daniel Hincapié</strong>
-            </div>
-            <p class="footer-tagline mt-2">
-              Desarrollador enfocado en soluciones web modernas, experiencias interactivas y arquitecturas en la nube.
-            </p>
-            <p class="footer-academic mt-1">
-              Universidad Tecnológica de Pereira · Tercer Corte Evaluativo
-            </p>
-          </div>
-
-          <div class="column is-6 footer-links-col">
-            <div class="buttons is-right footer-social-buttons">
-              <a
-                href="https://github.com/Damahibe"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button is-dark is-outlined is-rounded"
-              >
-                <span class="icon mr-1">🐙</span>
-                <span>GitHub</span>
-              </a>
-              <a
-                href="https://linkedin.com/in/daniel-hincapie"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button is-dark is-outlined is-rounded"
-              >
-                <span class="icon mr-1">💼</span>
-                <span>LinkedIn</span>
-              </a>
-              <a href="mailto:d.hincapie@utp.edu.co" class="button is-primary is-outlined is-rounded">
-                <span class="icon mr-1">✉️</span>
-                <span>Email</span>
-              </a>
-            </div>
-            <p class="copyright has-text-right-tablet has-text-centered-mobile mt-3">
-              &copy; 2026 Daniel.dev · Construido con HTML5, Bulma CSS y JavaScript limpio.
-            </p>
-          </div>
+        <p class="title is-5 mb-2">Daniel.dev</p>
+        <p class="subtitle is-6 has-text-grey mb-4">Portafolio web · Tercer Corte Evaluativo</p>
+        <div class="buttons is-centered">
+          <a
+            class="button is-small is-dark is-outlined"
+            href="https://github.com/Damahibe"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+          <a
+            class="button is-small is-dark is-outlined"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
+          <a class="button is-small is-primary is-outlined" href="mailto:d.hincapie@utp.edu.co">Email</a>
         </div>
       </div>
     </footer>
 
-    <!-- Script de interactividad: menú móvil Bulma y scroll suave -->
+    <!-- Script sencillo para interactividad del menú móvil de Bulma -->
     <script src="./script.js"></script>
   </body>
 </html>
