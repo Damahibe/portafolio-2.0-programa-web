@@ -28,6 +28,27 @@ body {
   line-height: 1.6;
 }
 
+/* Evitar solapamiento entre títulos y subtítulos de Bulma */
+.title {
+  color: var(--text-main) !important;
+}
+
+.title:not(:last-child) {
+  margin-bottom: 1.25rem !important;
+}
+
+.subtitle,
+.title + .subtitle,
+.title:not(.is-spaced) + .subtitle {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.hero-copy {
+  margin-top: 1.25rem !important;
+  line-height: 1.7 !important;
+}
+
 /* Accesibilidad */
 .skip-link {
   position: absolute;
