@@ -1,10 +1,10 @@
-# Portafolio Web - Daniel Hincapié
+# Portafolio 2.0 - Daniel Hincapié
 
 **Docente:** Juliana Gómez Osorio  
 **Asignatura:** Desarrollo Web / Frontend  
 **Entrega:** Tercer Corte Evaluativo  
 **Estudiante:** Daniel Hincapié  
-**Repositorio:** [https://github.com/Damahibe/Portfolio](https://github.com/Damahibe/Portfolio)  
+**Repositorio:** [https://github.com/Damahibe/portafolio-2.0-programa-web](https://github.com/Damahibe/portafolio-2.0-programa-web)  
 
 ---
 
